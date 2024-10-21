@@ -1,0 +1,12 @@
+ # Use the official Nginx image as the base image
+FROM nginx:alpine
+
+# Copy your static web app files to the default Nginx directory
+COPY . /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+docker build -t my-web-app .
+ docker run -d -p 8080:80 my-web-app
+http://localhost:8080
